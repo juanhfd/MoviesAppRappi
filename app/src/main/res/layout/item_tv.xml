@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.moviesapprappi.api.Api" />
+
+        <variable
+            name="tv"
+            type="com.example.moviesapprappi.model.Tv" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:orientation="vertical"
+        tools:background="@color/background">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/item_tv_post"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:scaleType="fitXY"
+            app:loadPaletteImage="@{Api.getPosterPath(tv.poster_path)}"
+            app:loadPaletteTarget="@{itemTvPalette}"
+            tools:src="@drawable/ic_star_white_24dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            tools:background="@color/colorPrimaryDark">
+
+            <LinearLayout
+                android:id="@+id/item_tv_palette"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.7"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/item_tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@{tv.name}"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="title" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

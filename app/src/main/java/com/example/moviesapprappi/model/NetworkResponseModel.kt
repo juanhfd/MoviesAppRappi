@@ -1,0 +1,3 @@
+package com.example.moviesapprappi.model
+
+interface NetworkResponseModel
